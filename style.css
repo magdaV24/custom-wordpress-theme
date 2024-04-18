@@ -1,0 +1,228 @@
+/* 
+Theme Name: Athena
+Text Domain: MagdaIsReading
+Version: 1.0
+Description: A custom Wordpress theme that comes with two vibrant color-schemes, the option to change the font, beautiful svgs to decorate the posts, and functionalities such as commenting, sorting comments, searching, 
+Tags: color-schemes, commenting, nested-comments, comments-sorting
+Author: Magada Vasilache
+Author URI: -
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Whisper&display=swap");
+
+body{
+  width: 99.05vw;
+  min-height: 99vh;
+  height: fit-content;
+}
+
+/* Footer */
+
+.footer{
+  padding: .5rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Front Page */
+.front-page-wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    min-height: 85vh;
+    height: fit-content;
+    width: 100%;
+    padding: 2rem;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .front-page-thumbnail {
+    height: auto;
+    margin-right: 0rem;
+    margin-bottom: 0rem;
+    height: auto;
+    overflow: hidden;
+    background-color: var(--tertiary);
+    padding: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .front-page-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .front-page-content {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+/* End of styles for the front page */
+
+/* Styles for the navigation bar */
+
+.navbar {
+    background-color: var(--secondary-background);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: sticky;
+    width: 100%;
+  }
+
+.navbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: .25rem;
+}
+
+.comments-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+input[type="radio"] + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #aaa;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.blog-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.logo-btn-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-btn {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  margin-right: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.logo-btn img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog-name{
+  font-size: 1.5rem;
+}
+
+/* Individual post page */
+
+.article{
+  width: 99.05vw;
+  min-height: 98vh;
+  height: fit-content;
+  background-color: var(--primary-background);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+/* Responsive styles */
+
+@media screen and (min-width: 0px) and (max-width: 634px) {
+  /* Styles for the front page */
+  .front-page-wrapper {
+    flex-direction: column;
+  }
+
+  .front-page-thumbnail {
+    width: 75%;
+  }
+
+  .front-page-content {
+    width: 75%;
+    font-size: 1.05rem;
+  }
+
+  /* Styles for the navigation bar */
+
+  .navbar-container{
+    gap: 1rem;
+  }
+  
+  .blog-name{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 892px) {
+    .front-page-thumbnail {
+    width: 45%;
+    overflow: hidden;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    
+  }
+
+  .front-page-content {
+    width: 25%;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 635px) and (max-width: 891px) {
+  .front-page-wrapper {
+    min-height: 85vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .front-page-thumbnail {
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+  }
+  .front-page-content {
+    width: 80%;
+    font-size: 1.2rem;
+  }
+}
